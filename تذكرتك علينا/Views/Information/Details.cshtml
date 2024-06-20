@@ -1,0 +1,76 @@
+﻿@model تذكرتك_علينا.Models.infomodel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+    .b {
+        background-image: url('https://th.bing.com/th/id/OIP.ZFPHAZq6eVDVc9mlOLAUtQHaEL?w=332&h=186&c=7&r=0&o=5&dpr=1.1&pid=1.7');
+        height: 340px;
+        width: auto;
+        color: gold;
+        font-weight: 500;
+        font-size: 20px;
+        padding: 15px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<h1>بياناتك </h1>
+
+<div class="b">
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YOurTeam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YOurTeam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Place)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ispuy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ispuy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">اتنقل للتعديل في بيانات المشجع </a> |
+    <a asp-action="Index">ارجع للمشجعين تاني</a>
+</div>

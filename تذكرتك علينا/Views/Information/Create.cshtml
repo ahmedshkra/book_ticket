@@ -1,0 +1,97 @@
+﻿@model تذكرتك_علينا.Models.infomodel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background-color:antiquewhite;
+    }
+.b{
+        background-image: url('https://www.lopinion.ma/photo/art/default/51830555-39693001.jpg?v=1606409542');
+        height: 740px;
+        width:auto;
+        color: white;
+        font-weight: 500;
+        font-size: 20px;
+        padding: 15px;
+        background-repeat:no-repeat;
+      background-size:cover;
+    }
+    </style>
+<h1>سجل بياناتك من  فضلك</h1>
+
+<hr />
+<div class="b">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">اسمك </label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input asp-for="YOurTeam" class="control-label" type="radio" value="الاهلى">
+                <label style ="background-color:red">الاهلى</label>
+                </>
+                <br />
+                <input asp-for="YOurTeam" class="control-label" type="radio" value="الزمالك">
+                <label style="background-color:wheat">الزمالك</label>
+                </>
+                <span asp-validation-for="YOurTeam" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">حدد سعر تذكرتك </label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place" class="control-label">مكانك في المدرجات </label>
+                <input asp-for="Place" class="form-control" />
+                <span asp-validation-for="Place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label">رقم موبيلك </label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input asp-for="Ispuy" class="control-label" type="radio" value="true">
+                <label>حجز مع الدفع</label>
+                </>
+                <br />
+                <input asp-for="Ispuy" class="control-label" type="radio" value="true">
+                <label>حجز فقط</label>
+                </>
+                <span asp-validation-for="Ispuy" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Date" class="control-label">تاريخ ميلادك </label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <input type="submit" value="احجز" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">ارجع للمشجعين تاني</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
